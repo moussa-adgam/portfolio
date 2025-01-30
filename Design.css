@@ -18,19 +18,20 @@ canvas {
     z-index: -1; /* הקנבס ברקע */
 }
 
-/* עיצוב כפתור HOME מרחף - שקוף */
+/* כפתור HOME צף ושקוף לחלוטין */
 .floating-home {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: transparent; /* רקע שקוף */
-    color: rgba(255, 255, 255, 0.8);
+    background: none !important; /* מבטל כל רקע */
+    color: rgba(255, 255, 255, 0.8); /* טקסט לבן עם שקיפות קלה */
     padding: 10px 15px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    border: none;
+    border: none !important; /* מסיר כל מסגרת */
     outline: none;
+    box-shadow: none !important; /* מסיר כל צל */
     transition: color 0.3s ease, transform 0.3s ease;
     z-index: 1000;
     cursor: pointer;
@@ -38,8 +39,31 @@ canvas {
 
 /* כשהעכבר עובר עליו */
 .floating-home:hover {
-    color: white;
+    color: white; /* הופך ללבן מלא */
     transform: scale(1.1);
+}
+
+/* עיצוב אייקונים מרחפים */
+.floating-icons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10; /* מעל הקנבס */
+}
+
+.floating-icons .icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.floating-icons .icon:hover {
+    transform: scale(1.2); /* הגדלה בעת מעבר עכבר */
+    box-shadow: 0 0 10px #fff; /* אפקט זוהר */
 }
 
 /* עיצוב הסרגל ניווט */
@@ -100,51 +124,6 @@ p {
     max-width: 600px;
 }
 
-/* עיצוב רשימת SKILLS */
-.skills-list {
-    list-style-type: none;
-    margin: 20px auto;
-    padding: 0;
-    max-width: 900px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* עיצוב כל סקיל בנפרד */
-.skills-list li {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-/* הגדלה קלה של סקיל בהובר */
-.skills-list li:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00ff00;
-}
-
-/* הגדלת האייקונים */
-.skills-list li img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-/* אפקט כשהעכבר עובר על האייקון */
-.skills-list li:hover img {
-    transform: rotate(5deg);
-}
-
 /* עיצוב כפתור HOME מרחף בפינה העליונה */
 .home-button {
     position: fixed;
@@ -166,108 +145,3 @@ p {
     transform: scale(1.1);
     box-shadow: 0 0 15px #00ff00;
 }
-
-/* עיצוב הטבלה ב-Terminal */
-.terminal {
-    text-align: center;
-    margin: 20px auto;
-    color: #00ff00;
-    font-family: monospace;
-}
-
-.terminal h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.commands {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 80%;
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #00ff00;
-    border: 1px solid #00ff00;
-}
-
-.commands td {
-    padding: 10px;
-    border: 1px solid #00ff00;
-    text-align: left;
-}
-
-.commands tr:hover {
-    background: rgba(0, 255, 0, 0.2);
-}
-
-/* עיצוב לינקים בטבלה */
-.commands a {
-    color: #00ff00;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.commands a:hover {
-    color: #33ff33;
-}
-
-/* עיצוב כותרת ERROR */
-.error-title {
-    font-size: 3rem;
-    color: red;
-    text-align: center;
-    animation: glitch 1.5s infinite;
-}
-
-/* עיצוב טקסט ERROR */
-.error-text {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* אפקט אנימציה ERROR */
-@keyframes glitch {
-    0% {
-        text-shadow: 2px 2px red, -2px -2px blue;
-    }
-    25% {
-        text-shadow: -2px -2px red, 2px 2px blue;
-    }
-    50% {
-        text-shadow: 2px -2px red, -2px 2px blue;
-    }
-    75% {
-        text-shadow: -2px 2px red, 2px -2px blue;
-    }
-    100% {
-        text-shadow: 2px 2px red, -2px -2px blue;
-    }
-}
-/* כפתור HOME צף ושקוף לחלוטין */
-.floating-home {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: transparent !important; /* מבטל כל רקע */
-    color: rgba(255, 255, 255, 0.8); /* טקסט מעט שקוף */
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none !important; /* מסיר מסגרת */
-    outline: none;
-    box-shadow: none !important; /* מסיר כל צל */
-    transition: color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-/* אפקט hover - הופך ללבן לגמרי */
-.floating-home:hover {
-    color: white;
-    transform: scale(1.1);
-}
-
