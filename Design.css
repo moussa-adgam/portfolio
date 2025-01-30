@@ -506,29 +506,30 @@ p {
 }
 /* כפתור HOME צף בפינה השמאלית העליונה */
 /* כפתור HOME צף ושקוף */
+/* כפתור HOME צף ושקוף תמיד */
 .floating-home {
     position: fixed;
     top: 20px; /* הצמדת הכפתור לחלק העליון */
     left: 20px; /* הצמדת הכפתור לצד השמאלי */
-    background: rgba(0, 0, 0, 0.3); /* צבע רקע שחור שקוף (שנה את ה-0.3 ליותר/פחות כדי לשלוט בשקיפות) */
-    color: white;
+    background: transparent; /* שקוף לגמרי */
+    color: white; /* צבע טקסט לבן */
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* זוהר קל */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* מסגרת לבנה חצי שקופה */
     transition: all 0.3s ease;
     z-index: 1000;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* מסגרת עדינה */
 }
 
-/* אפקט hover להבלטה */
+/* אפקט hover עדין */
 .floating-home:hover {
-    background: rgba(0, 0, 0, 0.6); /* הופך לפחות שקוף כשעוברים עם העכבר */
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    color: #00ff00; /* משנה צבע טקסט לירוק כשעוברים עליו */
+    border: 2px solid #00ff00; /* משנה את המסגרת לירוקה */
+    transform: scale(1.1); /* הגדלה קטנה */
 }
+
 
 /* כפתור HOME צף בפינה השמאלית העליונה */
 .floating-home {
