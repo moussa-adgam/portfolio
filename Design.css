@@ -537,6 +537,30 @@ p {
     left: 20px; /* הצמדת הכפתור לצד השמאלי */
     background: rgba(0, 255, 0, 0.8); /* צבע רקע ירוק */
     color: white;
+    /* כפתור HOME שקוף לחלוטין */
+.floating-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: transparent !important; /* מבטל כל רקע ירוק */
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none !important; /* מסיר כל מסגרת */
+    outline: none;
+    box-shadow: none !important; /* מסיר כל הצללה */
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* כשהעכבר עובר עליו */
+.floating-home:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
    
 
 
