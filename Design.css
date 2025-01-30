@@ -526,4 +526,13 @@ p {
     background: rgba(0, 200, 0, 1); /* צבע כהה יותר */
     transform: scale(1.1); /* הגדלה קלה */
 }
+/* כפתור HOME צף בפינה השמאלית העליונה */
+.floating-home {
+    position: fixed;
+    top: 20px; /* הצמדת הכפתור לחלק העליון */
+    left: 20px; /* הצמדת הכפתור לצד השמאלי */
+    background: rgba(0, 255, 0, 0.8); /* צבע רקע ירוק */
+    color: white;
+   
+
 
