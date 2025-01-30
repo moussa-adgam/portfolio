@@ -524,27 +524,25 @@ p {
     background: rgba(0, 200, 0, 1); /* צבע כהה יותר בהובר */
     transform: scale(1.1); /* אפקט הקפצה */
 }
-/* כפתור HOME צף ושקוף לחלוטין */
+/* כפתור HOME צף בפינה השמאלית העליונה */
 .floating-home {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none !important; /* מבטל כל רקע */
-    color: rgba(255, 255, 255, 0.8); /* צבע טקסט לבן עם שקיפות קלה */
+    top: 20px; /* הצמדת הכפתור לחלק העליון */
+    left: 20px; /* הצמדת הכפתור לצד השמאלי */
+    background: rgba(0, 255, 0, 0.8); /* צבע רקע ירוק */
+    color: white;
     padding: 10px 15px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    border: none !important; /* מסיר כל מסגרת */
-    outline: none;
-    box-shadow: none !important; /* מסיר כל צל */
-    transition: color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    transition: all 0.3s ease;
+    z-index: 1000; /* מוודא שהכפתור יישאר מעל כל התוכן */
 }
 
-/* כשהעכבר עובר עליו */
+/* אפקט hover להבלטה */
 .floating-home:hover {
-    color: white; /* הופך ללבן מלא */
-    transform: scale(1.1);
+    background: rgba(0, 200, 0, 1); /* צבע כהה יותר */
+    transform: scale(1.1); /* הגדלה קלה */
 }
