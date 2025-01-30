@@ -1,0 +1,506 @@
+/* עיצוב הדף כולו */
+body {
+    margin: 0;
+    overflow-x: hidden; /* מונע גלילה אופקית אך מאפשר גלילה אנכית */
+    overflow-y: auto; /* מאפשר גלילה אנכית */
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* עיצוב הקנבס */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* הקנבס ברקע */
+}
+
+/* עיצוב סרגל הניווט */
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: red;
+}
+
+/* עיצוב התוכן */
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 1; /* מעל הקנבס */
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: red;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.skills-list {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+}
+
+.skills-list li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.skills-list {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+}
+
+.skills-list li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.skills-list li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.terminal {
+    text-align: center;
+    margin: 20px auto;
+    color: #00ff00;
+    font-family: monospace;
+}
+
+.terminal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.commands {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.commands td {
+    padding: 10px;
+    border: 1px solid #00ff00;
+    text-align: left;
+}
+
+.commands tr:hover {
+    background: rgba(0, 255, 0, 0.2);
+}
+/* עיצוב הכותרת של הדף ERROR */
+.error-title {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    animation: glitch 1.5s infinite;
+}
+
+/* עיצוב הטקסט */
+.error-text {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* אנימציית גליץ' */
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px red, -2px -2px blue;
+    }
+    25% {
+        text-shadow: -2px -2px red, 2px 2px blue;
+    }
+    50% {
+        text-shadow: 2px -2px red, -2px 2px blue;
+    }
+    75% {
+        text-shadow: -2px 2px red, 2px -2px blue;
+    }
+    100% {
+        text-shadow: 2px 2px red, -2px -2px blue;
+    }
+}
+/* עיצוב ללינקים בתוך הטבלה */
+.commands a {
+    color: #00ff00; /* צבע ירוק */
+    text-decoration: none; /* הסרת קו תחתון */
+    font-weight: bold; /* טקסט מודגש */
+    transition: color 0.3s ease; /* אפקט מעבר צבע */
+}
+
+.commands a:hover {
+    color: #33ff33; /* צבע ירוק בהיר יותר במעבר עכבר */
+}
+/* עיצוב רשימת ה-Skills */
+.skills-list {
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+}
+
+.skills-list li {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.skills-list li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+/* עיצוב לאייקונים מרחפים */
+.floating-icons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10; /* מעל הקנבס */
+}
+
+.floating-icons .icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.floating-icons .icon:hover {
+    transform: scale(1.2); /* הגדלה בעת מעבר עכבר */
+    box-shadow: 0 0 10px #fff; /* אפקט זוהר */
+}
+
+/* שאר העיצובים נשארים כמו שהם */
+.content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 20px;
+}
+/* עיצוב דף הפרויקטים */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+    color: #00ff00;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: white;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #00ff00;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: white;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+/* עיצוב רשימת ה-Skills */
+.skills-list {
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+    max-width: 900px; /* הגדלת הרוחב כדי לפרוס את הסקילים בצורה יפה */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* ממרכז את האלמנטים */
+    gap: 20px; /* מוסיף רווח בין הסקילים */
+}
+
+/* עיצוב כל סקיל בנפרד */
+.skills-list li {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* מסדר את התמונה והטקסט אחד מתחת לשני */
+    align-items: center;
+    width: 150px; /* קובע רוחב אחיד לכל סקיל */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* הגדלה קלה של סקיל בהובר */
+.skills-list li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff00;
+}
+
+/* הגדלת האייקונים */
+.skills-list li img {
+    width: 70px; /* שינוי גודל התמונה */
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* אפקט כשהעכבר עובר על האייקון */
+.skills-list li:hover img {
+    transform: rotate(5deg);
+}
+/* עיצוב רשימת ה-Skills */
+.skills-list {
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+    max-width: 900px; /* מרכוז כל האלמנטים */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* עיצוב כל סקיל */
+.skills-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0; /* מסיר רווחים פנימיים */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px; /* גודל קבוע */
+    height: 150px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* אפקט hover */
+.skills-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ff00;
+}
+
+/* תמונה מכסה את כל הכרטיס */
+.skills-list li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: brightness(70%); /* מכהה את התמונה כדי שהכיתוב יבלוט */
+}
+
+/* עיצוב הכיתוב */
+.skills-list li span {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6); /* רקע כהה מאחורי הטקסט */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1;
+}
+/* עיצוב כפתור HOME מרחף */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* אפקט hover - כפתור גדל ומקבל צל */
+.home-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff00;
+}
+/* עיצוב כפתור HOME מרחף */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000; /* לוודא שהוא מעל הכול */
+    cursor: pointer; /* שהעכבר יראה סימן של לחיץ */
+}
+
+/* אפקט hover */
+.home-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff00;
+}
+/* Styling for Fun Facts List */
+.fun-facts {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.fun-facts li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
