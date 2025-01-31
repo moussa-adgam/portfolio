@@ -446,103 +446,69 @@ p {
     font-weight: bold;
     z-index: 1;
 }
-/* עיצוב כפתור HOME מרחף */
-.home-button {
+/* מיכל צף לכפתור Home */
+.floating-home {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    top: 20px; /* מרחק מהחלק העליון */
+    left: 20px; /* מרחק מהקצה השמאלי */
+    z-index: 1000; /* להבטיח שהכפתור מעל הכל */
 }
 
-/* אפקט hover - כפתור גדל ומקבל צל */
-.home-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00ff00;
-}
-/* עיצוב כפתור HOME מרחף */
+/* כפתור Home */
 .home-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    display: flex; /* שומר על כיוון טבעי של טקסט ואייקון */
+    align-items: center; /* ממרכז את הטקסט והאייקון */
+    gap: 8px; /* רווח בין האייקון לטקסט */
+    background: rgba(0, 0, 0, 0.5); /* רקע שקוף */
     color: white;
     padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 10px; /* פינות מעוגלות */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000; /* לוודא שהוא מעל הכול */
-    cursor: pointer; /* שהעכבר יראה סימן של לחיץ */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* מסגרת שקופה */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* זוהר ירוק */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    width: fit-content; /* מונע התרחבות */
+    height: auto; /* גובה דינמי */
+}
+
+/* אייקון בתוך הכפתור */
+.home-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* טקסט מודגש */
+.home-button span {
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7); /* צל ירוק */
 }
 
 /* אפקט hover */
 .home-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #00ff00;
-}
-/* Styling for Fun Facts List */
-.fun-facts {
-    list-style-type: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    background: rgba(0, 255, 0, 0.3);
 }
 
-.fun-facts li {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    text-align: center;
-}
-/* כפתור HOME צף */
-.floating-home {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0, 255, 0, 0.8); /* צבע רקע ירוק */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
-    transition: all 0.3s ease;
+/* תיקון למסכים קטנים */
+@media (max-width: 600px) {
+    .floating-home {
+        top: 10px;
+        left: 10px;
+    }
+
+    .home-button {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .home-button img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
-.floating-home:hover {
-    background: rgba(0, 200, 0, 1); /* צבע כהה יותר בהובר */
-    transform: scale(1.1); /* אפקט הקפצה */
-}
-/* כפתור HOME צף בפינה השמאלית העליונה */
-.floating-home {
-    position: fixed;
-    top: 20px; /* הצמדת הכפתור לחלק העליון */
-    left: 20px; /* הצמדת הכפתור לצד השמאלי */
-    background: rgba(0, 255, 0, 0.8); /* צבע רקע ירוק */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
-    transition: all 0.3s ease;
-    z-index: 1000; /* מוודא שהכפתור יישאר מעל כל התוכן */
-}
 
-/* אפקט hover להבלטה */
-.floating-home:hover {
-    background: rgba(0, 200, 0, 1); /* צבע כהה יותר */
-    transform: scale(1.1); /* הגדלה קלה */
-}
+
